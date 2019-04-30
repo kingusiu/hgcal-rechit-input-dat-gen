@@ -3,7 +3,7 @@
 /data/
 /bin/
 /config/*
-!/config/testConfig.txt
+!/config/config.txt
 /createAnalyser.sh
 /env.sh
 /analyser

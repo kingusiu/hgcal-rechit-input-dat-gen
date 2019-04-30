@@ -83,7 +83,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 	size_t nevents=tree()->entries();
 	if(isTestMode())
-		nevents/=1000;
+		nevents/=100;
 	for(size_t eventno=0;eventno<nevents;eventno++){
 
 		out_rechit_energy.clear();
@@ -99,9 +99,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<std::vector<int>> * simcluster_hits_idx = in_simcluster_hits_idx.content();
 		std::vector<std::vector<float>> * simcluster_frac = in_simcluster_frac.content();
 
-		std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
+		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
-		for( int hit_idx = 0; hit_idx < 20; hit_idx++){
+		for( int hit_idx = 0; hit_idx < rechit_energy.content()->size(); hit_idx++){ // get number of rechits from energy feature
 
 			out_simcluster_indices.push_back(std::vector<int>());
 			out_simcluster_frac.push_back(std::vector<float>());
