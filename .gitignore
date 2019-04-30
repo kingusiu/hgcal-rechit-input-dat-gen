@@ -1,0 +1,10 @@
+/output/
+/obj/
+/data/
+/bin/
+/config/*
+!/config/testConfig.txt
+/createAnalyser.sh
+/env.sh
+/analyser
+/._*
