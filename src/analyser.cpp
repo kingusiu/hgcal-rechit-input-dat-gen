@@ -137,7 +137,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		 * Do not remove!
 		 */
 		reportStatus(eventno,nevents);
-		tree()->setEntry(eventno);
+		tree()->setEntry(eventno); // ??? is all data (energy, eta, ...) of rechits for the event read in here ???
 
 		copyInputVecToOutputVec(rechit_energy, out_rechit_energy);
 		copyInputVecToOutputVec(rechit_eta, out_rechit_eta);
