@@ -9,9 +9,31 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#include <numeric>
 #include "interface/analyser.h"
 
+/**
+ * computes angle theta from angle eta as - 1/2 arctan ( e^eta )
+ **/
 auto computeTheta = []( float eta ){ return - 1./2 * atan( exp( eta ) ); };
+
+/**
+ * sorts vector A according to the order of values in another vector B
+ * return : sorted A
+ **/
+template< typename T, typename U >
+std::vector<T> sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ){
+
+	std::vector<pair<T,U>> zipped(a.size());
+	for( size_t i = 0; i < a.size(); i++ ) zipped[i] = std::make_pair( a[i], b[i] ); // zip the two vectors (A,B)
+
+	std::sort(zipped.begin(), zipped.end(), []( auto & lop, auto & rop ) { return lop.second < rop.second; }); // sort according to B
+
+	std::vector<T> sorted;
+	std::transform(zipped.begin(), zipped.end(), std::back_inserter(sorted), []( auto & pair ){ return pair.first; }) // extract sorted A
+
+	return sorted;
+}
 
 template< typename T >
 void analyser::copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec ){
@@ -32,7 +54,7 @@ template void analyser::copyInputVecToOutputVec<int>( d_ana::tBranchHandler<std:
 void analyser::analyze(size_t childid /* this info can be used for printouts */){
 
 	std::vector<std::string> feature_names_rechit = {"rechit_energy", "rechit_eta", "rechit_phi", "rechit_x", "rechit_y", "rechit_detid"};
-	std::vector<std::string> feature_names_simcluster = {"simcluster_hits_indices", "simcluster_fractions" };
+	std::vector<std::string> feature_names_simcluster = {"simcluster_hits_indices", "simcluster_fractions", "simcluster_eta" };
 
 	
 	/* ==SKIM==
@@ -52,7 +74,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 // simcluster data
 	 d_ana::tBranchHandler<std::vector <std::vector<int>> > in_simcluster_hits_idx(tree(), "simcluster_hits_indices");
 	 d_ana::tBranchHandler<std::vector <std::vector<float>> > in_simcluster_frac(tree(), "simcluster_fractions");
-
+	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_eta(tree(),"simcluster_eta");
 
 	/*
 	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
@@ -101,9 +123,22 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		out_simcluster_indices.clear();
 		out_simcluster_frac.clear();
 
+		/*
+		 * The following two lines report the status and set the event link
+		 * Do not remove!
+		 */
+		reportStatus(eventno,nevents);
+		tree()->setEntry(eventno); // ??? is all data (energy, eta, ...) of all registered in vectors for the event read in here ???
+
+
 		// read in simcluster data
-		std::vector<std::vector<int>> * simcluster_hits_idx = in_simcluster_hits_idx.content(); // for each simcluster get the hits that it produced
-		std::vector<std::vector<float>> * simcluster_frac = in_simcluster_frac.content();
+		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
+		std::vector<std::vector<int>> simcluster_hits_idx = *in_simcluster_hits_idx.content(); // for each simcluster get the hits that it produced
+		std::vector<std::vector<float>> simcluster_frac = *in_simcluster_frac.content();
+
+		// sort simcluster data by eta
+		std::vector<std::vector<int>> simcluster_hits_idx_sorted = sortVecAByVecB( simcluster_hits_idx, simcluster_eta );
+		std::vector<std::vector<float>> simcluster_frac_sorted = sortVecAByVecB( simcluster_frac, simcluster_eta );
 
 		int simcluster_num = simcluster_hits_idx->size(); 
 
@@ -130,14 +165,6 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 				}
 			}
 		}
-
-		
-		/*
-		 * The following two lines report the status and set the event link
-		 * Do not remove!
-		 */
-		reportStatus(eventno,nevents);
-		tree()->setEntry(eventno); // ??? is all data (energy, eta, ...) of rechits for the event read in here ???
 
 		copyInputVecToOutputVec(rechit_energy, out_rechit_energy);
 		copyInputVecToOutputVec(rechit_eta, out_rechit_eta);
