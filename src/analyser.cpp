@@ -1,15 +1,17 @@
 /*
  * analyser.cpp
  *
- *  Created on: 24 Aug 2016
- *      Author: jkiesele
+ *  Created on: 07 May 2019
+ *      Author: kiwoznia
  */
 
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 #include "interface/analyser.h"
 
+auto computeTheta = []( float eta ){ return - 1./2 * atan( exp( eta ) ); };
 
 template< typename T >
 void analyser::copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec ){
@@ -74,6 +76,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	myskim->Branch("rechit_y", &out_rechit_y);
 	std::vector<int> out_rechit_detid;
 	myskim->Branch("rechit_detid", &out_rechit_detid);
+	// computed theta
+	std::vector<float> out_rechit_theta;
+	myskim->Branch("rechit_theta", &out_rechit_theta);
 	// simcluster attribute output
 	std::vector<std::vector<int>> out_simcluster_indices; // save simcluster id as index appearing in simcluster_* arrays of root file
 	myskim->Branch("simcluster_indices", &out_simcluster_indices);
@@ -89,6 +94,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		out_rechit_energy.clear();
 		out_rechit_eta.clear();
 		out_rechit_phi.clear();
+		out_rechit_theta.clear();
 		out_rechit_x.clear();
 		out_rechit_y.clear();
 		out_rechit_detid.clear();		
@@ -138,6 +144,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		copyInputVecToOutputVec(rechit_x, out_rechit_x);
 		copyInputVecToOutputVec(rechit_y, out_rechit_y);
 		copyInputVecToOutputVec(rechit_detid, out_rechit_detid);
+
+		// compute theta from eta for all rechits
+		std::transform( out_rechit_eta.begin(), out_rechit_eta.end(), std::back_inserter( out_rechit_theta ), computeTheta );
 
 		myskim->Fill();
 
