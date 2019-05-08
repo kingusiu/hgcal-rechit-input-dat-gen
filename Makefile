@@ -3,7 +3,7 @@ CPP_FILES := $(wildcard src/*.cpp)
 OBJ_FILES := $(addprefix obj/,$(notdir $(CPP_FILES:.cpp=.o)))
 LD_FLAGS := `root-config --cflags --glibs` -lMinuit -lMathMore -lMinuit2
 LD_FLAGS += -L$(DELPHES_PATH) -lDelphes -L$(DANALYSISPATH) -lDAnalysis
-CC_FLAGS := -fPIC -g -Wall `root-config --cflags`
+CC_FLAGS := -fPIC -g -Wall `root-config --cflags` -std=c++14
 CC_FLAGS += -I$(DELPHES_PATH) -I$(DANALYSISPATH) -I.
 #CC_FLAGS += -MMD
 

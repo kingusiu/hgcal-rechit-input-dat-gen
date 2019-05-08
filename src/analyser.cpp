@@ -24,13 +24,13 @@ auto computeTheta = []( float eta ){ return - 1./2 * atan( exp( eta ) ); };
 template< typename T, typename U >
 std::vector<T> sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ){
 
-	std::vector<pair<T,U>> zipped(a.size());
+	std::vector<std::pair<T,U>> zipped(a.size());
 	for( size_t i = 0; i < a.size(); i++ ) zipped[i] = std::make_pair( a[i], b[i] ); // zip the two vectors (A,B)
 
 	std::sort(zipped.begin(), zipped.end(), []( auto & lop, auto & rop ) { return lop.second < rop.second; }); // sort according to B
 
 	std::vector<T> sorted;
-	std::transform(zipped.begin(), zipped.end(), std::back_inserter(sorted), []( auto & pair ){ return pair.first; }) // extract sorted A
+	std::transform(zipped.begin(), zipped.end(), std::back_inserter(sorted), []( auto & pair ){ return pair.first; }); // extract sorted A
 
 	return sorted;
 }
@@ -140,7 +140,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<std::vector<int>> simcluster_hits_idx_sorted = sortVecAByVecB( simcluster_hits_idx, simcluster_eta );
 		std::vector<std::vector<float>> simcluster_frac_sorted = sortVecAByVecB( simcluster_frac, simcluster_eta );
 
-		int simcluster_num = simcluster_hits_idx->size(); 
+		int simcluster_num = simcluster_hits_idx.size(); 
 
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
@@ -152,7 +152,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 			// go through each simcluster and look for hit 'hit_idx'
 			for( int cluster_idx = 0; cluster_idx < simcluster_num; cluster_idx++ ) {
 	
-				auto hits_in_cluster = simcluster_hits_idx->at(cluster_idx);
+				auto hits_in_cluster = simcluster_hits_idx_sorted.at(cluster_idx);
 				//std::cout << "number of hits in cluster " << cluster_idx << ": " << hits_in_cluster.size() << std::endl;
 				auto found = std::find( hits_in_cluster.begin(), hits_in_cluster.end(), hit_idx );
 
@@ -160,7 +160,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 					//std::cout << hit_idx << " found!" << std::endl;
 					out_simcluster_indices[hit_idx].push_back(cluster_idx); // store cluster id to hit
 					int frac_idx = found - hits_in_cluster.begin();
-					float frac = simcluster_frac->at(cluster_idx).at(frac_idx);
+					float frac = simcluster_frac_sorted.at(cluster_idx).at(frac_idx);
 					out_simcluster_frac[hit_idx].at( cluster_idx ) = frac;// store fraction of cluster to this hit's fraction vector
 				}
 			}
