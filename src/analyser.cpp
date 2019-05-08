@@ -102,18 +102,20 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		out_simcluster_frac.clear();
 
 		// read in simcluster data
-		std::vector<std::vector<int>> * simcluster_hits_idx = in_simcluster_hits_idx.content();
+		std::vector<std::vector<int>> * simcluster_hits_idx = in_simcluster_hits_idx.content(); // for each simcluster get the hits that it produced
 		std::vector<std::vector<float>> * simcluster_frac = in_simcluster_frac.content();
+
+		int simcluster_num = simcluster_hits_idx->size(); 
 
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
 		for( int hit_idx = 0; hit_idx < rechit_energy.content()->size(); hit_idx++){ // get number of rechits from energy feature
 
 			out_simcluster_indices.push_back(std::vector<int>());
-			out_simcluster_frac.push_back(std::vector<float>());
+			out_simcluster_frac.push_back(std::vector<float>(simcluster_num, 0.0));
 
 			// go through each simcluster and look for hit 'hit_idx'
-			for( int cluster_idx = 0; cluster_idx < simcluster_hits_idx->size(); cluster_idx++ ) {
+			for( int cluster_idx = 0; cluster_idx < simcluster_num; cluster_idx++ ) {
 	
 				auto hits_in_cluster = simcluster_hits_idx->at(cluster_idx);
 				//std::cout << "number of hits in cluster " << cluster_idx << ": " << hits_in_cluster.size() << std::endl;
@@ -124,13 +126,12 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 					out_simcluster_indices[hit_idx].push_back(cluster_idx); // store cluster id to hit
 					int frac_idx = found - hits_in_cluster.begin();
 					float frac = simcluster_frac->at(cluster_idx).at(frac_idx);
-					out_simcluster_frac[hit_idx].push_back( frac );// store fraction to hit
+					out_simcluster_frac[hit_idx].at( cluster_idx ) = frac;// store fraction of cluster to this hit's fraction vector
 				}
 			}
 		}
 
 		
-
 		/*
 		 * The following two lines report the status and set the event link
 		 * Do not remove!
