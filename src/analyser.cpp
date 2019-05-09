@@ -86,21 +86,8 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 * Or store a vector of objects (also possible to store only one object)
 	 */
 	// rechit attribute outputs
-	std::vector<float> out_rechit_energy;
-	myskim->Branch("rechit_energy", &out_rechit_energy);
-	std::vector<float> out_rechit_eta;
-	myskim->Branch("rechit_eta", &out_rechit_eta);
-	std::vector<float> out_rechit_phi;
-	myskim->Branch("rechit_phi", &out_rechit_phi);
-	std::vector<float> out_rechit_x;
-	myskim->Branch("rechit_x", &out_rechit_x);
-	std::vector<float> out_rechit_y;
-	myskim->Branch("rechit_y", &out_rechit_y);
-	std::vector<int> out_rechit_detid;
-	myskim->Branch("rechit_detid", &out_rechit_detid);
-	// computed theta
-	std::vector<float> out_rechit_theta;
-	myskim->Branch("rechit_theta", &out_rechit_theta);
+	std::vector< std::vector<float> > out_rechit;
+	myskim->Branch("rechit_features", &out_rechit);
 	// simcluster attribute output
 	std::vector<std::vector<int>> out_simcluster_indices; // save simcluster id as index appearing in simcluster_* arrays of root file
 	myskim->Branch("simcluster_indices", &out_simcluster_indices);
@@ -113,13 +100,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		nevents/=100;
 	for(size_t eventno=0;eventno<nevents;eventno++){
 
-		out_rechit_energy.clear();
-		out_rechit_eta.clear();
-		out_rechit_phi.clear();
-		out_rechit_theta.clear();
-		out_rechit_x.clear();
-		out_rechit_y.clear();
-		out_rechit_detid.clear();		
+		out_rechit.clear();
 		out_simcluster_indices.clear();
 		out_simcluster_frac.clear();
 
@@ -138,6 +119,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<float> * rechit_phi_content = rechit_phi.content();
 		std::vector<float> * rechit_eta_content = rechit_eta.content();
 
+		// compute theta from eta for all rechits
+		std::vector<float> rechit_theta;
+		std::transform( rechit_eta_content->begin(), rechit_eta_content->end(), std::back_inserter( rechit_theta ), computeTheta );
 
 		// read in simcluster data
 		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
@@ -153,6 +137,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
 		for( int hit_idx = 0; hit_idx < rechit_energy.content()->size(); hit_idx++){ // get number of rechits from energy feature
+
+			// put together all features
+			std::vector<float> rechit_features = { rechit_energy_content->at(hit_idx), rechit_x_content->at(hit_idx), rechit_y_content->at(hit_idx), static_cast<float>(rechit_detid_content->at(hit_idx)), rechit_phi_content->at(hit_idx), rechit_eta_content->at(hit_idx), rechit_theta.at(hit_idx) };
+			out_rechit.push_back(rechit_features);
 
 			out_simcluster_indices.push_back(std::vector<int>());
 			out_simcluster_frac.push_back(std::vector<float>(simcluster_num, 0.0));
@@ -174,27 +162,8 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 			}
 		}
 
-		copyInputVecToOutputVec(rechit_energy, out_rechit_energy);
-		copyInputVecToOutputVec(rechit_eta, out_rechit_eta);
-		copyInputVecToOutputVec(rechit_phi, out_rechit_phi);
-		copyInputVecToOutputVec(rechit_x, out_rechit_x);
-		copyInputVecToOutputVec(rechit_y, out_rechit_y);
-		copyInputVecToOutputVec(rechit_detid, out_rechit_detid);
-
-		// compute theta from eta for all rechits
-		std::transform( out_rechit_eta.begin(), out_rechit_eta.end(), std::back_inserter( out_rechit_theta ), computeTheta );
-
 		myskim->Fill();
 
-
-
-		/*==SKIM==
-		 * Access the branches of the skim
-		 */
-		//std::vector<Electron> * skimelecs=electrons.content();
-		//for(size_t i=0;i<skimelecs->size();i++){
-		//	histo->Fill(skimelecs->at(i).PT);
-		//}
 	}
 
 
@@ -207,71 +176,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 
 
-void analyser::postProcess(){
-	/*
-	 * This function can be used to analyse the output histograms, e.g. extract a signal contribution etc.
-	 * The function can also be called directly on an output file with the histograms, if
-	 * RunOnOutputOnly = true
-	 * is set in the analyser's config file
-	 *
-	 * This function also represents an example of how the output of the analyser can be
-	 * read-back in an external program.
-	 * Just include the sampleCollection.h header and follow the procedure below
-	 *
-	 */
-
-	/*
-	 * Here, the input file to the extraction of parameters from the histograms is the output file
-	 * of the parallelised analysis.
-	 * The sampleCollection class can also be used externally for accessing the output consistently
-	 */
-	d_ana::sampleCollection samplecoll;
-	samplecoll.readFromFile(getOutPath());
-
-	std::vector<TString> alllegends = samplecoll.listAllLegends();
-
-	/*
-	 * Example how to process the output.
-	 * Usually, one would define the legendname of the histogram to be used here
-	 * by hand, e.g. "signal" or "background".
-	 * To make this example run in any case, I am using alllegends.at(0), which
-	 * could e.g. be the signal legend.
-	 *
-	 * So in practise, the following would more look like
-	 * samplecoll.getHistos("signal");
-	 */
-	if(false /*alllegends.size()>0*/){
-				
-		d_ana::histoCollection histos=samplecoll.getHistos(alllegends.at(0));
-
-		/*
-		 * here, the histogram created in the analyze() function is selected and evaluated
-		 * The histoCollection maintains ownership (you don't need to delete the histogram)
-		 */
-		const TH1* myplot=histos.getHisto("histoname1");
-
-		std::cout << "(example output): the integral is " << myplot->Integral() <<std::endl;
-
-		/*
-		 * If the histogram is subject to changes, please clone it and take ownership
-		 */
-
-		TH1* myplot2=histos.cloneHisto("histoname1");
-
-		/*
-		 * do something with the histogram
-		 */
-
-		delete myplot2;
-	}
-
-	/*
-	 * do the extraction here.
-	 */
-
-
-
-}
+void analyser::postProcess(){ }
 
 
 
