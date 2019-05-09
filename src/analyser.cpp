@@ -39,12 +39,7 @@ template< typename T >
 void analyser::copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec ){
 
 	std::vector<T> * in_vec_content = in_vec.content();
-
-	for( unsigned int i = 0; i < in_vec_content->size(); i++ ){
-		
-		out_vec.push_back( in_vec_content->at(i) );
-
-	}
+	out_vec = *in_vec_content;
 }
 
 template void analyser::copyInputVecToOutputVec<float>( d_ana::tBranchHandler<std::vector<float>> & in_vec, std::vector<float> & out_vec );
@@ -165,7 +160,6 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		myskim->Fill();
 
 	}
-
 
 	/*
 	 * Must be called in the end, takes care of thread-safe writeout and
