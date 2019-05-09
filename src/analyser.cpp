@@ -130,6 +130,14 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		reportStatus(eventno,nevents);
 		tree()->setEntry(eventno); // ??? is all data (energy, eta, ...) of all registered in vectors for the event read in here ???
 
+		// read in rechit features
+		std::vector<float> * rechit_energy_content = rechit_energy.content();
+		std::vector<float> * rechit_x_content = rechit_x.content();
+		std::vector<float> * rechit_y_content = rechit_y.content();
+		std::vector<int> * rechit_detid_content = rechit_detid.content(); // detid is int
+		std::vector<float> * rechit_phi_content = rechit_phi.content();
+		std::vector<float> * rechit_eta_content = rechit_eta.content();
+
 
 		// read in simcluster data
 		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
