@@ -128,10 +128,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<std::vector<float>> simcluster_frac_sorted = sortVecAByVecB( simcluster_frac, simcluster_eta );
 
 		int simcluster_num = simcluster_hits_idx.size(); 
-
+		int rechit_num = rechit_energy.content()->size();
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
-		for( int hit_idx = 0; hit_idx < rechit_energy.content()->size(); hit_idx++){ // get number of rechits from energy feature
+		for( int hit_idx = 0; hit_idx < rechit_num; hit_idx++){ // get number of rechits from energy feature
 
 			// put together all features
 			std::vector<float> rechit_features = { rechit_energy_content->at(hit_idx), rechit_x_content->at(hit_idx), rechit_y_content->at(hit_idx), static_cast<float>(rechit_detid_content->at(hit_idx)), rechit_phi_content->at(hit_idx), rechit_eta_content->at(hit_idx), rechit_theta.at(hit_idx) };
