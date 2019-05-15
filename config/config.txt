@@ -18,7 +18,8 @@ $
 [config-begin]
 
 $    Outputdir  = output
-    Outputdir  = /eos/home-k/kiwoznia/dev/hgcal/output
+$    Outputdir  = /eos/home-k/kiwoznia/dev/hgcal/output
+    Outputdir  = /afs/cern.ch/work/k/kiwoznia/public/NTUP_130519/converted
     Outputfile = outputfile.root
     
 $ The luminosity is to be given to match the cross section values listed in the section "inputfiles"
@@ -40,8 +41,9 @@ $ different input file.
 
 $ This Samplesdir can be a local directory or refer to off-site locations via xrootd 
     
-$    Samplesdir = /afs/cern.ch/user/j/jkiesele/public/testsamples
- Samplesdir = /eos/cms/store/cmst3/group/hgcal/CMG_studies/Production/FlatRandomEGunProducer_test_lgray_20190214/NTUP
+$ Samplesdir = /eos/cms/store/cmst3/group/hgcal/CMG_studies/Production/FlatRandomEGunProducer_test_lgray_20190214/NTUP
+
+ Samplesdir = /afs/cern.ch/work/k/kiwoznia/public/NTUP_130519
  
 $ The analyser will have a postProcess() function. This function should be used to
 $ extract parameters from the filled histograms, do additional calculations, etc.
@@ -80,7 +82,7 @@ $delphes_testsample.root  , signal,       630, 23, auto, 1, true
 $delphes_testsample.root  , background,   420, 56, auto, 2
 $delphes_testsample.root  , background2,  432, 65, auto, 3
 $/  ,                       background3,  431, 12, auto, 5
-/ ,                       background3,  431, 12, auto, 5
+/ ,                       ntuple_converted,  431, 12, auto, 5
 
 $ The last entry is an example for running over all input files in a directory
 
