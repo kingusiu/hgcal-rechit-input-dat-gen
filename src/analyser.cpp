@@ -15,7 +15,7 @@
 /**
  * computes angle theta from angle eta as - 1/2 arctan ( e^eta )
  **/
-auto computeTheta = []( float eta ){ return - 1./2 * atan( exp( eta ) ); };
+auto computeTheta = []( float eta ){ return 2. * atan( exp( -eta ) ); };
 
 /**
  * sorts vector A according to the order of values in another vector B
@@ -47,6 +47,8 @@ template void analyser::copyInputVecToOutputVec<int>( d_ana::tBranchHandler<std:
 
 
 void analyser::analyze(size_t childid /* this info can be used for printouts */){
+
+	std::cout << "+++ reading input file " << getSampleFile() << std::endl;
 
 	std::vector<std::string> feature_names_rechit = {"rechit_energy", "rechit_eta", "rechit_phi", "rechit_x", "rechit_y", "rechit_detid"};
 	std::vector<std::string> feature_names_simcluster = {"simcluster_hits_indices", "simcluster_fractions", "simcluster_eta" };
@@ -104,7 +106,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		 * Do not remove!
 		 */
 		reportStatus(eventno,nevents);
-		tree()->setEntry(eventno); // ??? is all data (energy, eta, ...) of all registered in vectors for the event read in here ???
+		tree()->setEntry(eventno); // all data (energy, eta, ...) of all registered in vectors for the event read in here
 
 		// read in rechit features
 		std::vector<float> * rechit_energy_content = rechit_energy.content();
