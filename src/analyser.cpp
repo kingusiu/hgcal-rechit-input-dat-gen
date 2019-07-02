@@ -10,7 +10,8 @@
 #include <numeric>
 #include <utility>
 #include "interface/analyser.h"
-#include "interface/RechitNtupleConverter.h"
+#include "interface/RechitConverter.h"
+#include "interface/SimclusterConverter.h"
 
 /**
  * sorts vector A according to the order of values in another vector B
@@ -104,7 +105,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		tree()->setEntry(eventno); // all data (energy, eta, ...) of all registered in vectors for the event read in here
 
 		// read in rechit features
-		RechitNtupleConverter rechitConv = RechitNtupleConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
+		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
+		// read in simcluster features
+		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
 		// read in simcluster data
 		std::vector<float> simcluster_eta = *in_simcluster_eta.content();

@@ -20,7 +20,7 @@ $
 $    Outputdir  = output
 $    Outputdir  = /eos/home-k/kiwoznia/dev/hgcal/output
 $    Outputdir  = /afs/cern.ch/user/m/mrieger/public/ 
-	Outputdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot
+	Outputdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot/conversionInDevelopment
     Outputfile = outputfile.root
     
 $ The luminosity is to be given to match the cross section values listed in the section "inputfiles"

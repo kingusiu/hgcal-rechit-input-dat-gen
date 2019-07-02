@@ -1,20 +1,20 @@
 /*
- * RechitNtupleConverter
+ * RechitConverter
  *
  *  Created on: 01 July 2019
  *      Author: kiwoznia
  */
 
 
-#ifndef rechitntupleconverter_H_
-#define rechitntupleconverter_H_
+#ifndef rechitconverter_H_
+#define rechitconverter_H_
 
 #include <vector>
 #include <functional>
 #include <cmath>
 
 
-class RechitNtupleConverter {
+class RechitConverter {
 
     std::vector<float> * _energy;
     std::vector<float> * _x;
@@ -32,7 +32,7 @@ class RechitNtupleConverter {
 
     public:
 
-    RechitNtupleConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<int> * ii, std::vector<float> * pp, std::vector<float> * et );
+    RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<int> * ii, std::vector<float> * pp, std::vector<float> * et );
 
     std::vector<float> * energy() { return _energy; }
     std::vector<float> * x() { return _x; }
@@ -48,4 +48,4 @@ class RechitNtupleConverter {
 };
 
 
-#endif /* rechitntupleconverter_H_ */
+#endif /* rechitconverter_H_ */
