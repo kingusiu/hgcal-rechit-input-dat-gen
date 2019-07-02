@@ -7,29 +7,10 @@
 
 #include <string>
 #include <iostream>
-#include <numeric>
 #include <utility>
 #include "interface/analyser.h"
 #include "interface/RechitConverter.h"
 #include "interface/SimclusterConverter.h"
-
-/**
- * sorts vector A according to the order of values in another vector B
- * return : sorted A
- **/
-template< typename T, typename U >
-std::vector<T> sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ){
-
-	std::vector<std::pair<T,U>> zipped(a.size());
-	for( size_t i = 0; i < a.size(); i++ ) zipped[i] = std::make_pair( a[i], b[i] ); // zip the two vectors (A,B)
-
-	std::sort(zipped.begin(), zipped.end(), []( auto & lop, auto & rop ) { return lop.second < rop.second; }); // sort according to B
-
-	std::vector<T> sorted;
-	std::transform(zipped.begin(), zipped.end(), std::back_inserter(sorted), []( auto & pair ){ return pair.first; }); // extract sorted A
-
-	return sorted;
-}
 
 template< typename T >
 void analyser::copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec ){
@@ -115,8 +96,8 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<std::vector<float>> simcluster_frac = *in_simcluster_frac.content();
 
 		// sort simcluster data by eta
-		std::vector<std::vector<int>> simcluster_hits_idx_sorted = sortVecAByVecB( simcluster_hits_idx, simcluster_eta );
-		std::vector<std::vector<float>> simcluster_frac_sorted = sortVecAByVecB( simcluster_frac, simcluster_eta );
+		std::vector<std::vector<int>> simcluster_hits_idx_sorted = simclusConv.sortVecAByVecB( simcluster_hits_idx, simcluster_eta );
+		std::vector<std::vector<float>> simcluster_frac_sorted = simclusConv.sortVecAByVecB( simcluster_frac, simcluster_eta );
 
 		int simcluster_num = simcluster_hits_idx.size(); 
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
