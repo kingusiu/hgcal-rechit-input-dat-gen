@@ -26,8 +26,6 @@ private:
 
 	void postProcess();
 	
-	template<typename T>
-	void copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec );
 };
 
 

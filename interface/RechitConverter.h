@@ -34,16 +34,9 @@ class RechitConverter {
 
     RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<int> * ii, std::vector<float> * pp, std::vector<float> * et );
 
-    std::vector<float> * energy() { return _energy; }
-    std::vector<float> * x() { return _x; }
-    std::vector<float> * y() { return _y; }
-    std::vector<int> * detid() { return _detid; }
-    std::vector<float> * phi() { return _phi; }
-    std::vector<float> * eta() { return _eta; }
-
     int numRechits(){ return _energy->size(); }
 
-    std::vector<float> getRechitFeatures( int rechit_idx );
+    std::vector<float> getFeaturesForHit( int rechit_idx );
 
 };
 

@@ -34,6 +34,7 @@ void SimclusterConverter::sortVecAByVecB( std::vector<T> & a, std::vector<U> & b
 template void SimclusterConverter::sortVecAByVecB( std::vector<std::vector<int>> & a, std::vector<float> & b ); // int vec instance
 template void SimclusterConverter::sortVecAByVecB( std::vector<std::vector<float>> & a, std::vector<float> & b ); // float vec instance
 
+
 std::pair<std::vector<int>, std::vector<float>> SimclusterConverter::getClusterIdxAndFracForHit( int hit_idx ){
 
     std::vector<int> cluster_indices_for_hit;

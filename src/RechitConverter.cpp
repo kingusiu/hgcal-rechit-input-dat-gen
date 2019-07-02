@@ -11,6 +11,6 @@ RechitConverter::RechitConverter( std::vector<float> * en, std::vector<float> * 
 
                                             }
 
-std::vector<float> RechitConverter::getRechitFeatures( int rechit_idx ){
+std::vector<float> RechitConverter::getFeaturesForHit( int rechit_idx ){
     return std::vector<float>{ _energy->at(rechit_idx), _x->at(rechit_idx), _y->at(rechit_idx), static_cast<float>(_detid->at(rechit_idx)), _phi->at(rechit_idx), _eta->at(rechit_idx), _theta.at(rechit_idx) };
 }

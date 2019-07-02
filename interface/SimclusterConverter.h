@@ -18,10 +18,7 @@ class SimclusterConverter {
     int numSimclusters( ){ return _hits_indices.size(); }
 
     template< typename T, typename U >
-    void sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ); // TODO: move to util class if more types are added
-
-    std::vector<std::vector<int>> hits_idx(){ return _hits_indices; };
-    std::vector<std::vector<float>> frac(){ return _frac; };    
+    void sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ); // TODO: move to util class if more types are added   
 
     std::pair<std::vector<int>, std::vector<float>> getClusterIdxAndFracForHit( int hit_idx );
 

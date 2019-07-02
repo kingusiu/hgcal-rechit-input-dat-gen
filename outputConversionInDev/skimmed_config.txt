@@ -11,3 +11,5 @@ ntuple_converted0_ntuple.root, ntuple_converted, 431, 12, 3,5, false
 [inputfiles-end]
 ntuple_converted_20_ntuple.root, ntuple_converted_2, 431, 12, 3,5, false 
 [inputfiles-end]
+ntuple_converted_30_ntuple.root, ntuple_converted_3, 431, 12, 3,5, false 
+[inputfiles-end]

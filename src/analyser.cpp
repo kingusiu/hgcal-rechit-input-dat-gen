@@ -12,16 +12,6 @@
 #include "interface/RechitConverter.h"
 #include "interface/SimclusterConverter.h"
 
-template< typename T >
-void analyser::copyInputVecToOutputVec( d_ana::tBranchHandler<std::vector<T>> & in_vec, std::vector<T> & out_vec ){
-
-	std::vector<T> * in_vec_content = in_vec.content();
-	out_vec = *in_vec_content;
-}
-
-template void analyser::copyInputVecToOutputVec<float>( d_ana::tBranchHandler<std::vector<float>> & in_vec, std::vector<float> & out_vec );
-template void analyser::copyInputVecToOutputVec<int>( d_ana::tBranchHandler<std::vector<int>> & in_vec, std::vector<int> & out_vec );
-
 
 void analyser::analyze(size_t childid /* this info can be used for printouts */){
 
@@ -64,10 +54,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	std::vector<std::vector<float>> out_simcluster_frac;
 	myskim->Branch("simcluster_fractions", &out_simcluster_frac);
 
-
 	size_t nevents=tree()->entries();
-	if(isTestMode())
-		nevents/=100;
+	if(isTestMode()) nevents/=100;
+
 	for(size_t eventno=0;eventno<nevents;eventno++){
 
 		out_rechit.clear();
@@ -83,39 +72,22 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 		// read in rechit features
 		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
+
 		// read in simcluster features and sort by eta
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
-		// sort simcluster data by eta
-		std::vector<std::vector<int>> simcluster_hits_idx_sorted = simclusConv.hits_idx();
-		std::vector<std::vector<float>> simcluster_frac_sorted = simclusConv.frac();
-
-		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // get number of rechits from energy feature
+		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // for each rechit (get number of rechits from energy feature)
 
 			// put together all features for rechit "hit_idx"
-			std::vector<float> rechit_features = rechitConv.getRechitFeatures( hit_idx );
+			std::vector<float> rechit_features = rechitConv.getFeaturesForHit( hit_idx );
 			out_rechit.push_back(rechit_features);
 
-			//std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( int hit_idx ); 
+			// get simcluster indices and their respective fractions for rechit "hit_idx"
+			std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( hit_idx ); 
 
-			out_simcluster_indices.push_back(std::vector<int>());
-			out_simcluster_frac.push_back(std::vector<float>(simclusConv.numSimclusters(), 0.0));
+			out_simcluster_indices.push_back( simcluster_indices_and_fractions.first );
+			out_simcluster_frac.push_back( simcluster_indices_and_fractions.second );
 
-			// go through each simcluster and look for hit 'hit_idx'
-			for( int cluster_idx = 0; cluster_idx < simclusConv.numSimclusters(); cluster_idx++ ) {
-	
-				auto hits_in_cluster = simcluster_hits_idx_sorted.at(cluster_idx);
-				//std::cout << "number of hits in cluster " << cluster_idx << ": " << hits_in_cluster.size() << std::endl;
-				auto found = std::find( hits_in_cluster.begin(), hits_in_cluster.end(), hit_idx );
-
-				if( found != hits_in_cluster.end() ){
-					//std::cout << hit_idx << " found!" << std::endl;
-					out_simcluster_indices[hit_idx].push_back(cluster_idx); // store cluster id to hit
-					int frac_idx = found - hits_in_cluster.begin();
-					float frac = simcluster_frac_sorted.at(cluster_idx).at(frac_idx);
-					out_simcluster_frac[hit_idx].at( cluster_idx ) = frac;// store fraction of cluster to this hit's fraction vector
-				}
-			}
 		}
 
 		myskim->Fill();
