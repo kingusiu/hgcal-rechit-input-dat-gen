@@ -1,0 +1,11 @@
+[config-begin]
+	Outputdir  = set_new_output_directory
+	Outputfile = outputfile.root
+	Lumi = 3000
+	Maxchilds = 6
+	Samplesdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/DAnalysis_workdir/outputConversionInDev/
+[config-end]
+
+[inputfiles-begin]
+ntuple_converted0_ntuple.root, ntuple_converted, 431, 12, 3,5, false 
+[inputfiles-end]

@@ -20,7 +20,8 @@ $
 $    Outputdir  = output
 $    Outputdir  = /eos/home-k/kiwoznia/dev/hgcal/output
 $    Outputdir  = /afs/cern.ch/user/m/mrieger/public/ 
-	Outputdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot/conversionInDevelopment
+	$Outputdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot/conversionInDevelopment
+	Outputdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/DAnalysis_workdir/outputConversionInDev
     Outputfile = outputfile.root
     
 $ The luminosity is to be given to match the cross section values listed in the section "inputfiles"
@@ -44,7 +45,7 @@ $ This Samplesdir can be a local directory or refer to off-site locations via xr
     
 $ Samplesdir = /eos/cms/store/cmst3/group/hgcal/CMG_studies/Production/FlatRandomEGunProducer_test_lgray_20190214/NTUP
 
- Samplesdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot 
+ Samplesdir = /afs/cern.ch/user/k/kiwoznia/dev/hgcal/hgcalsim/.data/store/NtupTask/testPlot
  
 $ The analyser will have a postProcess() function. This function should be used to
 $ extract parameters from the filled histograms, do additional calculations, etc.
