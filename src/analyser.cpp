@@ -26,10 +26,6 @@ template void analyser::copyInputVecToOutputVec<int>( d_ana::tBranchHandler<std:
 void analyser::analyze(size_t childid /* this info can be used for printouts */){
 
 	std::cout << "+++ reading input file " << getSampleFile() << std::endl;
-
-	std::vector<std::string> feature_names_rechit = {"rechit_energy", "rechit_eta", "rechit_phi", "rechit_x", "rechit_y", "rechit_detid"};
-	std::vector<std::string> feature_names_simcluster = {"simcluster_hits_indices", "simcluster_fractions", "simcluster_eta" };
-
 	
 	/* ==SKIM==
 	 *
@@ -87,20 +83,12 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 		// read in rechit features
 		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
-		// read in simcluster features
+		// read in simcluster features and sort by eta
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
-		// read in simcluster data
-		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
-		std::vector<std::vector<int>> simcluster_hits_idx = *in_simcluster_hits_idx.content(); // for each simcluster get the hits that it produced
-		std::vector<std::vector<float>> simcluster_frac = *in_simcluster_frac.content();
-
 		// sort simcluster data by eta
-		std::vector<std::vector<int>> simcluster_hits_idx_sorted = simclusConv.sortVecAByVecB( simcluster_hits_idx, simcluster_eta );
-		std::vector<std::vector<float>> simcluster_frac_sorted = simclusConv.sortVecAByVecB( simcluster_frac, simcluster_eta );
-
-		int simcluster_num = simcluster_hits_idx.size(); 
-		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
+		std::vector<std::vector<int>> simcluster_hits_idx_sorted = simclusConv.hits_idx();
+		std::vector<std::vector<float>> simcluster_frac_sorted = simclusConv.frac();
 
 		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // get number of rechits from energy feature
 
@@ -111,10 +99,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 			//std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( int hit_idx ); 
 
 			out_simcluster_indices.push_back(std::vector<int>());
-			out_simcluster_frac.push_back(std::vector<float>(simcluster_num, 0.0));
+			out_simcluster_frac.push_back(std::vector<float>(simclusConv.numSimclusters(), 0.0));
 
 			// go through each simcluster and look for hit 'hit_idx'
-			for( int cluster_idx = 0; cluster_idx < simcluster_num; cluster_idx++ ) {
+			for( int cluster_idx = 0; cluster_idx < simclusConv.numSimclusters(); cluster_idx++ ) {
 	
 				auto hits_in_cluster = simcluster_hits_idx_sorted.at(cluster_idx);
 				//std::cout << "number of hits in cluster " << cluster_idx << ": " << hits_in_cluster.size() << std::endl;

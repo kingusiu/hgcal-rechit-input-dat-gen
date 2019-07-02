@@ -84,7 +84,7 @@ $delphes_testsample.root  , signal,       630, 23, auto, 1, true
 $delphes_testsample.root  , background,   420, 56, auto, 2
 $delphes_testsample.root  , background2,  432, 65, auto, 3
 $/  ,                       background3,  431, 12, auto, 5
-/ ,                       ntuple_converted,  431, 12, auto, 5
+/ ,                       ntuple_converted_2,  431, 12, auto, 5
 
 $ The last entry is an example for running over all input files in a directory
 
