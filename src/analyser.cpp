@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <numeric>
+#include <utility>
 #include "interface/analyser.h"
 #include "interface/RechitNtupleConverter.h"
 
@@ -103,17 +104,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		tree()->setEntry(eventno); // all data (energy, eta, ...) of all registered in vectors for the event read in here
 
 		// read in rechit features
-		std::vector<float> * rechit_energy_content = rechit_energy.content();
-		std::vector<float> * rechit_x_content = rechit_x.content();
-		std::vector<float> * rechit_y_content = rechit_y.content();
-		std::vector<int> * rechit_detid_content = rechit_detid.content(); // detid is int
-		std::vector<float> * rechit_phi_content = rechit_phi.content();
-		std::vector<float> * rechit_eta_content = rechit_eta.content();
-
-		RechitNtupleConverter converter = RechitNtupleConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
-
-		// compute theta from eta for all rechits
-		std::vector<float> rechit_theta = converter.computeTheta( );
+		RechitNtupleConverter rechitConv = RechitNtupleConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
 
 		// read in simcluster data
 		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
@@ -125,14 +116,15 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<std::vector<float>> simcluster_frac_sorted = sortVecAByVecB( simcluster_frac, simcluster_eta );
 
 		int simcluster_num = simcluster_hits_idx.size(); 
-		int rechit_num = rechit_energy.content()->size();
 		//std::cout << simcluster_hits_idx->size() << " simclusters found" << std::endl;
 
-		for( int hit_idx = 0; hit_idx < rechit_num; hit_idx++){ // get number of rechits from energy feature
+		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // get number of rechits from energy feature
 
-			// put together all features
-			std::vector<float> rechit_features = { rechit_energy_content->at(hit_idx), rechit_x_content->at(hit_idx), rechit_y_content->at(hit_idx), static_cast<float>(rechit_detid_content->at(hit_idx)), rechit_phi_content->at(hit_idx), rechit_eta_content->at(hit_idx), rechit_theta.at(hit_idx) };
+			// put together all features for rechit "hit_idx"
+			std::vector<float> rechit_features = rechitConv.getRechitFeatures( hit_idx );
 			out_rechit.push_back(rechit_features);
+
+			//std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( int hit_idx ); 
 
 			out_simcluster_indices.push_back(std::vector<int>());
 			out_simcluster_frac.push_back(std::vector<float>(simcluster_num, 0.0));

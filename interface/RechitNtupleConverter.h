@@ -1,3 +1,11 @@
+/*
+ * RechitNtupleConverter
+ *
+ *  Created on: 01 July 2019
+ *      Author: kiwoznia
+ */
+
+
 #ifndef rechitntupleconverter_H_
 #define rechitntupleconverter_H_
 
@@ -14,12 +22,13 @@ class RechitNtupleConverter {
     std::vector<int> * _detid;
     std::vector<float> * _phi;
     std::vector<float> * _eta;
+    std::vector<float> _theta;
 
 
     /**
      * computes angle theta from angle eta as 2 * arctan ( e^-eta )
      **/
-    std::function< float( float )> thetaF = []( float eta ){ return 2. * atan( exp( -eta ) ); };
+    std::function< float( float )> computeTheta = []( float eta ){ return 2. * atan( exp( -eta ) ); };
 
     public:
 
@@ -32,7 +41,9 @@ class RechitNtupleConverter {
     std::vector<float> * phi() { return _phi; }
     std::vector<float> * eta() { return _eta; }
 
-    std::vector<float> computeTheta( );
+    int numRechits(){ return _energy->size(); }
+
+    std::vector<float> getRechitFeatures( int rechit_idx );
 
 };
 
