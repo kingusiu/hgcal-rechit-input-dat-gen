@@ -7,15 +7,9 @@
 
 #include <string>
 #include <iostream>
-#include <algorithm>
-#include <cmath>
 #include <numeric>
 #include "interface/analyser.h"
-
-/**
- * computes angle theta from angle eta as - 1/2 arctan ( e^eta )
- **/
-auto computeTheta = []( float eta ){ return 2. * atan( exp( -eta ) ); };
+#include "interface/RechitNtupleConverter.h"
 
 /**
  * sorts vector A according to the order of values in another vector B
@@ -116,9 +110,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		std::vector<float> * rechit_phi_content = rechit_phi.content();
 		std::vector<float> * rechit_eta_content = rechit_eta.content();
 
+		RechitNtupleConverter converter = RechitNtupleConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
+
 		// compute theta from eta for all rechits
-		std::vector<float> rechit_theta;
-		std::transform( rechit_eta_content->begin(), rechit_eta_content->end(), std::back_inserter( rechit_theta ), computeTheta );
+		std::vector<float> rechit_theta = converter.computeTheta( );
 
 		// read in simcluster data
 		std::vector<float> simcluster_eta = *in_simcluster_eta.content();
