@@ -9,7 +9,7 @@ RechitConverter::RechitConverter( std::vector<float> * en, std::vector<float> * 
                                             _energy( en ), _x( xx ), _y( yy ), _z( zz ), _detid( dd ), _phi( pp ), _eta( et ) { 
 
                                                     	std::transform( _eta->begin(), _eta->end(), std::back_inserter( _theta ), computeTheta ); // compute theta
-                                                        std::cout << "z min: " << *std::min_element(_z->begin(), _z->end()) << ", z max: " << *std::max_element(_z->begin(), _z->end()) << std::endl;
+                                                        //std::cout << "z min: " << *std::min_element(_z->begin(), _z->end()) << ", z max: " << *std::max_element(_z->begin(), _z->end()) << std::endl;
                                             }
 
 std::vector<float> RechitConverter::getFeaturesForHit( int rechit_idx ){

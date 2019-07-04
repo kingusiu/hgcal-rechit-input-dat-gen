@@ -2,6 +2,7 @@
 
 #include <numeric>
 #include <algorithm>
+#include <set>
 
 using std::size_t;
 
@@ -60,4 +61,17 @@ std::pair<std::vector<int>, std::vector<float>> SimclusterConverter::getClusterI
     return std::pair<std::vector<int>, std::vector<float>>{ cluster_indices_for_hit, cluster_fractions_for_hit };
 }
 
+std::vector<int> SimclusterConverter::getHitIndicesHitByClusters( ){
+
+    std::size_t numRechitsHit = std::accumulate(_hits_indices.begin(), _hits_indices.end(), std::size_t{0}, []( auto & lop, auto & rop ){ return lop + rop.size(); });
+
+    std::vector<int> hits_indices_flattened;
+    hits_indices_flattened.reserve( numRechitsHit );
+
+    for(auto & v : _hits_indices ) hits_indices_flattened.insert( hits_indices_flattened.end(), v.begin(), v.end() );
+
+    std::set<int> unique( hits_indices_flattened.begin(), hits_indices_flattened.end() );
+
+    return std::vector<int>{ unique.begin(), unique.end() }; // return unique hit indices
+}
 
