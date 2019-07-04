@@ -36,6 +36,8 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 d_ana::tBranchHandler<std::vector <std::vector<int>> > in_simcluster_hits_idx(tree(), "simcluster_hits_indices");
 	 d_ana::tBranchHandler<std::vector <std::vector<float>> > in_simcluster_frac(tree(), "simcluster_fractions");
 	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_eta(tree(),"simcluster_eta");
+	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_phi(tree(),"simcluster_phi");
+
 
 	/*
 	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
@@ -75,7 +77,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
 
 		// read in simcluster features and sort by eta
-		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
+		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
 		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // for each rechit (get number of rechits from energy feature)
 
