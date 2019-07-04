@@ -19,6 +19,7 @@ class RechitConverter {
     std::vector<float> * _energy;
     std::vector<float> * _x;
     std::vector<float> * _y;
+    std::vector<float> * _z;
     std::vector<int> * _detid;
     std::vector<float> * _phi;
     std::vector<float> * _eta;
@@ -32,7 +33,7 @@ class RechitConverter {
 
     public:
 
-    RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<int> * ii, std::vector<float> * pp, std::vector<float> * et );
+    RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<float> * zz, std::vector<int> * ii, std::vector<float> * pp, std::vector<float> * et );
 
     int numRechits(){ return _energy->size(); }
 

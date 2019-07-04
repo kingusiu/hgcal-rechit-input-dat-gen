@@ -4,8 +4,8 @@
 #include <numeric>
 
 
-RechitConverter::RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<int> * dd, std::vector<float> * pp, std::vector<float> * et ):
-                                            _energy( en ), _x( xx ), _y( yy ), _detid( dd ), _phi( pp ), _eta( et ) { 
+RechitConverter::RechitConverter( std::vector<float> * en, std::vector<float> * xx, std::vector<float> * yy, std::vector<float> * zz, std::vector<int> * dd, std::vector<float> * pp, std::vector<float> * et ):
+                                            _energy( en ), _x( xx ), _y( yy ), _z( zz ), _detid( dd ), _phi( pp ), _eta( et ) { 
 
                                                     	std::transform( _eta->begin(), _eta->end(), std::back_inserter( _theta ), computeTheta ); // compute theta
 
