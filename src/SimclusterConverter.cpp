@@ -6,8 +6,10 @@
 using std::size_t;
 
 
-SimclusterConverter::SimclusterConverter( std::vector<float> * eta, std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, bool sorted ):
-                                            _eta( *eta ), _hits_indices( *hits_idx ), _frac( *frac ) { 
+SimclusterConverter::SimclusterConverter( std::vector<float> * eta, std::vector<float> * phi, std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, bool sorted ):
+                                            _eta( *eta ), _phi( *phi ), _hits_indices( *hits_idx ), _frac( *frac ) { 
+
+                                                //_simclusStats = SimclusterStats(*std::min_element(_eta.begin(),_eta.end()),*std::max_element(_eta.begin(),_eta.end()));
 
                                                 if(sorted){
                                                     sortVecAByVecB( _hits_indices, _eta );
@@ -16,8 +18,7 @@ SimclusterConverter::SimclusterConverter( std::vector<float> * eta, std::vector<
                                             }
 
 /**
- * sorts vector A according to the order of values in another vector B
- * return : sorted A
+ * sorts vector A according to the order of values in another vector B in place
  **/
 template< typename T, typename U >
 void SimclusterConverter::sortVecAByVecB( std::vector<T> & a, std::vector<U> & b ){

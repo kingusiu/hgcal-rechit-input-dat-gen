@@ -58,7 +58,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	myskim->Branch("simcluster_fractions", &out_simcluster_frac);
 
 	size_t nevents=tree()->entries();
-	if(isTestMode()) nevents/=100;
+	//if(isTestMode()) nevents/=100;
 
 	for(size_t eventno=0;eventno<nevents;eventno++){
 
