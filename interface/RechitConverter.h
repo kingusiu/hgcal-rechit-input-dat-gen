@@ -39,6 +39,9 @@ class RechitConverter {
 
     std::vector<float> getFeaturesForHit( int rechit_idx );
 
+    std::vector<float> * eta(){ return _eta; };
+    std::vector<float> * phi(){ return _phi; };
+
 };
 
 

@@ -11,6 +11,7 @@
 #include "interface/analyser.h"
 #include "interface/RechitConverter.h"
 #include "interface/SimclusterConverter.h"
+#include "interface/WindowEtaPhi.h"
 
 
 void analyser::analyze(size_t childid /* this info can be used for printouts */){
@@ -79,9 +80,12 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		// read in simcluster features and sort by eta
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
+		// get hits in window
+		double window_margin = 0.05;
 		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
+		std::vector<int> hit_indices_in_eta_phi_window = WindowEtaPhi::getHitIndicesInEtaPhiWindow( &hit_idx_in_simclusters, rechitConv.eta(), rechitConv.phi(), window_margin ); 
 
-		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // for each rechit (get number of rechits from energy feature)
+		for( int hit_idx : hit_indices_in_eta_phi_window ){ // for each rechit (get number of rechits from energy feature)
 
 			// put together all features for rechit "hit_idx"
 			std::vector<float> rechit_features = rechitConv.getFeaturesForHit( hit_idx );

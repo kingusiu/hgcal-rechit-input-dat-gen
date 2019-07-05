@@ -1,6 +1,7 @@
 #include "interface/WindowEtaPhi.h"
 
 #include <algorithm>
+#include <iostream>
 
 std::pair<float,float> WindowEtaPhi::getMinMaxOfIndexSubset( std::vector<int> * indices, std::vector<float> * values ){
 

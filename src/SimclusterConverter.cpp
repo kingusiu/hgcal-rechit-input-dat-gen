@@ -71,6 +71,7 @@ std::vector<int> SimclusterConverter::getHitIndicesBelongingToClusters( ){
     for(auto & v : _hits_indices ) hits_indices_flattened.insert( hits_indices_flattened.end(), v.begin(), v.end() );
 
     std::set<int> unique( hits_indices_flattened.begin(), hits_indices_flattened.end() );
+    unique.erase(-1); // indices in CloseByParticleGunProducer are initialized with -1, those not found in map of true "firing rechits" remain thus -1
 
     return std::vector<int>{ unique.begin(), unique.end() }; // return unique hit indices
 }
