@@ -39,6 +39,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_eta(tree(),"simcluster_eta");
 	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_phi(tree(),"simcluster_phi");
 
+	 d_ana::tBranchHandler<std::vector<float> > in_track_x(tree(), "track_x");
+	 d_ana::tBranchHandler<std::vector<float> > in_track_y(tree(), "track_y");
+	 d_ana::tBranchHandler<std::vector<float> > in_track_z(tree(), "track_z");
+	 d_ana::tBranchHandler<std::vector<float> > in_track_pt(tree(),"track_pt");
 
 	/*
 	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
@@ -82,8 +86,11 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 		// get hits in window
 		double window_margin = 0.05;
+		WindowEtaPhi window;
 		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
-		std::vector<int> hit_indices_in_eta_phi_window = WindowEtaPhi::getHitIndicesInEtaPhiWindow( &hit_idx_in_simclusters, rechitConv.eta(), rechitConv.phi(), window_margin ); 
+		std::vector<int> hit_indices_in_eta_phi_window = window.createWindowAndGetHitIndicesInEtaPhiWindow( &hit_idx_in_simclusters, rechitConv.eta(), rechitConv.phi(), window_margin);
+
+		size_t n_rechit_features=0;
 
 		for( int hit_idx : hit_indices_in_eta_phi_window ){ // for each rechit (get number of rechits from energy feature)
 
@@ -97,7 +104,14 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 			out_simcluster_indices.push_back( simcluster_indices_and_fractions.first );
 			out_simcluster_frac.push_back( simcluster_indices_and_fractions.second );
 
+			if(!n_rechit_features)
+			    n_rechit_features=rechit_features.size();
+
 		}
+
+		//add track information
+		//std::vector<float> * track_x = in_track_x.content();
+
 
 		myskim->Fill();
 
