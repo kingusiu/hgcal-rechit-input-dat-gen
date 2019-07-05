@@ -1,7 +1,6 @@
 /output/
 /obj/
 /data/
-/bin/
 /config/*
 !/config/config.txt
 /createAnalyser.sh
