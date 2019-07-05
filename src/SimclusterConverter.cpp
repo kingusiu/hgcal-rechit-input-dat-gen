@@ -61,7 +61,7 @@ std::pair<std::vector<int>, std::vector<float>> SimclusterConverter::getClusterI
     return std::pair<std::vector<int>, std::vector<float>>{ cluster_indices_for_hit, cluster_fractions_for_hit };
 }
 
-std::vector<int> SimclusterConverter::getHitIndicesHitByClusters( ){
+std::vector<int> SimclusterConverter::getHitIndicesBelongingToClusters( ){
 
     std::size_t numRechitsHit = std::accumulate(_hits_indices.begin(), _hits_indices.end(), std::size_t{0}, []( auto & lop, auto & rop ){ return lop + rop.size(); });
 

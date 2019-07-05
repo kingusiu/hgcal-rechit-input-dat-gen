@@ -35,7 +35,7 @@ class SimclusterConverter {
 
     std::pair<std::vector<int>, std::vector<float>> getClusterIdxAndFracForHit( int hit_idx );
 
-    std::vector<int> getHitIndicesHitByClusters( );
+    std::vector<int> getHitIndicesBelongingToClusters( );
 
 };
 

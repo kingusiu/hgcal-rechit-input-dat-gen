@@ -79,6 +79,8 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		// read in simcluster features and sort by eta
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
+		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
+
 		for( int hit_idx = 0; hit_idx < rechitConv.numRechits(); hit_idx++){ // for each rechit (get number of rechits from energy feature)
 
 			// put together all features for rechit "hit_idx"
