@@ -5,6 +5,5 @@
 /config/*
 !/config/config.txt
 /createAnalyser.sh
-/env.sh
 /analyser
 /._*
