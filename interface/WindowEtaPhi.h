@@ -10,7 +10,7 @@ class WindowEtaPhi {
         std::pair<float,float> _eta_window;
         std::pair<float,float> _phi_window;
 
-        std::pair<float,float> getMinMaxOfIndexSubset( std::vector<int> * indices, std::vector<float> * values, bool isPhi );
+        std::pair<float,float> getMinMaxOfIndexSubset( std::vector<int> * indices, std::vector<float> * values );
 
         bool hitIsInWindow( float eta, float phi );
 

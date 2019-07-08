@@ -1,0 +1,152 @@
+basicAnalyzer::readConfigFile: reading input file 
+basicAnalyzer::readConfigFile: input file read in. Free for changes.
+basicAnalyser::INFO: the input / is a directory.
+Creating file list and total number of events in directory
+(might take a while for many files. It is strongly encouraged to "hadd" them before!)... 
+
+[A0%
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+[A13%
+[A25%
+[A38%
+[A50%
+[A63%
+[A75%
+[A88%
+[A100%
+extracted the total number of entries in directory: 400
+(add this to your configuration file instead of "auto"!)
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_256_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_253_n50.root
++++ reading input file /ntup_252_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_255_n50.root
++++ reading input file /ntup_250_n50.root
++++ reading input file /ntup_251_n50.root
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_busy            2%
+8166   ntuple_converted__2            child_busy            2%
+8167   ntuple_converted__3            child_busy            2%
+8168   ntuple_converted__4            child_busy            2%
+8169   ntuple_converted__5            child_busy            2%
+0      ntuple_converted__6            child_hold            0%
+0      ntuple_converted__7            child_hold            0%
+total: 1%  estimated time: 0:06:34
+next update in 20 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_busy            2%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_busy            2%
+8168   ntuple_converted__4            child_busy            2%
+8169   ntuple_converted__5            child_busy            2%
+0      ntuple_converted__6            child_hold            0%
+0      ntuple_converted__7            child_hold            0%
+total: 13%  estimated time: 0:00:56
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_257_n50.root
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_busy            2%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_busy            2%
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_busy            2%
+8240   ntuple_converted__6            child_busy            0%
+0      ntuple_converted__7            child_hold            0%
+total: 26%  estimated time: 0:00:28
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_258_n50.root
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_success       100%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_busy          100% - 00:00
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_busy            2%
+8240   ntuple_converted__6            child_busy            2%
+8241   ntuple_converted__7            child_busy            2%
+total: 51%  estimated time: 0:00:10
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_success       100%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_success       100%
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_busy            2%
+8240   ntuple_converted__6            child_busy            2%
+8241   ntuple_converted__7            child_busy            2%
+total: 51%  estimated time: 0:00:11
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_busy            2%
+8165   ntuple_converted__1            child_success       100%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_success       100%
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_success       100%
+8240   ntuple_converted__6            child_busy            2%
+8241   ntuple_converted__7            child_busy            2%
+total: 63%  estimated time: 0:00:07
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_success       100%
+8165   ntuple_converted__1            child_success       100%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_success       100%
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_success       100%
+8240   ntuple_converted__6            child_busy            2%
+8241   ntuple_converted__7            child_busy            2%
+total: 75%  estimated time: 0:00:04
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+8164   ntuple_converted__0            child_success       100%
+8165   ntuple_converted__1            child_success       100%
+8166   ntuple_converted__2            child_success       100%
+8167   ntuple_converted__3            child_success       100%
+8168   ntuple_converted__4            child_success       100%
+8169   ntuple_converted__5            child_success       100%
+8240   ntuple_converted__6            child_success       100%
+8241   ntuple_converted__7            child_busy          100% - 00:00
+total: 100%  estimated time: 0:00:00
+next update in 5 seconds or when child exits
+
+
+basicAnalyzer::writeConfigFooter: configuration file for skim written to:
+/eos/cms/store/cmst3/group/hgcal/CMG_studies/kiwoznia/hgcalsim/NtupTask/dev_CloseByParticleGun_DeltaR0p1_prod5_converted/skimmed_config.txt
+End report:
+Sample                         statuscode           progress 
+ntuple_converted__0            child_success        100%
+ntuple_converted__1            child_success        100%
+ntuple_converted__2            child_success        100%
+ntuple_converted__3            child_success        100%
+ntuple_converted__4            child_success        100%
+ntuple_converted__5            child_success        100%
+ntuple_converted__6            child_success        100%
+ntuple_converted__7            child_success        100%
+

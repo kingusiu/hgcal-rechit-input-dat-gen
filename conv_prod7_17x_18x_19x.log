@@ -1,0 +1,1328 @@
+basicAnalyzer::readConfigFile: reading input file 
+basicAnalyzer::readConfigFile: input file read in. Free for changes.
+basicAnalyser::INFO: the input / is a directory.
+Creating file list and total number of events in directory
+(might take a while for many files. It is strongly encouraged to "hadd" them before!)... 
+
+[A0%
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+[A3%
+[A6%
+[A10%
+[A13%
+[A16%
+[A19%
+[A23%
+[A26%
+[A29%
+[A32%
+[A35%
+[A39%
+[A42%
+[A45%
+[A48%
+[A52%
+[A55%
+[A58%
+[A61%
+[A65%
+[A68%
+[A71%
+[A74%
+[A77%
+[A81%
+[A84%
+[A87%
+[A90%
+[A94%
+[A97%
+[A100%
+extracted the total number of entries in directory: 1550
+(add this to your configuration file instead of "auto"!)
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_172_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_176_n50.root
++++ reading input file /ntup_173_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_174_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_170_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_175_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_busy            2%
+13946  ntuple_converted__1            child_busy            2%
+13947  ntuple_converted__2            child_busy            2%
+13948  ntuple_converted__3            child_busy            2%
+13949  ntuple_converted__4            child_busy            2%
+13950  ntuple_converted__5            child_busy            2%
+0      ntuple_converted__6            child_hold            0%
+0      ntuple_converted__7            child_hold            0%
+0      ntuple_converted__8            child_hold            0%
+0      ntuple_converted__9            child_hold            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 0%  estimated time: 0:21:26
+next update in 1 minute or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_busy            2%
+13946  ntuple_converted__1            child_busy            2%
+13947  ntuple_converted__2            child_busy            2%
+13948  ntuple_converted__3            child_busy            2%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_busy          100% - 00:00
+0      ntuple_converted__6            child_hold            0%
+0      ntuple_converted__7            child_hold            0%
+0      ntuple_converted__8            child_hold            0%
+0      ntuple_converted__9            child_hold            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 6%  estimated time: 0:03:14
+next update in 20 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_busy            2%
+13946  ntuple_converted__1            child_busy            2%
+13947  ntuple_converted__2            child_busy            2%
+13948  ntuple_converted__3            child_busy            2%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_busy            0%
+0      ntuple_converted__7            child_hold            0%
+0      ntuple_converted__8            child_hold            0%
+0      ntuple_converted__9            child_hold            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 6%  estimated time: 0:03:14
+next update in 20 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_177_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_178_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_busy          100% - 00:00
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_busy          100% - 00:00
+13948  ntuple_converted__3            child_busy          100% - 00:00
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_busy            2%
+14009  ntuple_converted__7            child_busy            2%
+0      ntuple_converted__8            child_hold            0%
+0      ntuple_converted__9            child_hold            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 19%  estimated time: 0:00:57
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_busy          100% - 00:00
+13948  ntuple_converted__3            child_busy          100% - 00:00
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_busy            2%
+14009  ntuple_converted__7            child_busy            2%
+14011  ntuple_converted__8            child_busy            0%
+0      ntuple_converted__9            child_hold            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 19%  estimated time: 0:01:01
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_179_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_17_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_busy          100% - 00:00
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_busy            2%
+14009  ntuple_converted__7            child_busy            2%
+14011  ntuple_converted__8            child_busy            2%
+14012  ntuple_converted__9            child_busy            0%
+0      ntuple_converted__10           child_hold            0%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 19%  estimated time: 0:01:01
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_180_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_busy            2%
+14009  ntuple_converted__7            child_busy            2%
+14011  ntuple_converted__8            child_busy            2%
+14012  ntuple_converted__9            child_busy            2%
+14013  ntuple_converted__10           child_busy            2%
+0      ntuple_converted__11           child_hold            0%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 19%  estimated time: 0:01:25
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_181_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_busy            2%
+14011  ntuple_converted__8            child_busy          100% - 00:00
+14012  ntuple_converted__9            child_busy            2%
+14013  ntuple_converted__10           child_busy            2%
+14026  ntuple_converted__11           child_busy            2%
+0      ntuple_converted__12           child_hold            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 26%  estimated time: 0:01:05
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_busy            2%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_busy            2%
+14013  ntuple_converted__10           child_busy            2%
+14026  ntuple_converted__11           child_busy            2%
+14094  ntuple_converted__12           child_busy            0%
+0      ntuple_converted__13           child_hold            0%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 26%  estimated time: 0:01:08
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_182_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_183_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_busy            2%
+14013  ntuple_converted__10           child_busy            2%
+14026  ntuple_converted__11           child_busy            2%
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_busy            2%
+0      ntuple_converted__14           child_hold            0%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 29%  estimated time: 0:01:02
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_184_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_busy            2%
+14013  ntuple_converted__10           child_busy            2%
+14026  ntuple_converted__11           child_busy            2%
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_busy            2%
+14099  ntuple_converted__14           child_busy            2%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 29%  estimated time: 0:01:14
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_busy            2%
+14026  ntuple_converted__11           child_busy            2%
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_busy            2%
+14099  ntuple_converted__14           child_busy            2%
+0      ntuple_converted__15           child_hold            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 32%  estimated time: 0:01:12
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_busy          100% - 00:00
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_busy            2%
+14099  ntuple_converted__14           child_busy            2%
+14155  ntuple_converted__15           child_busy            0%
+0      ntuple_converted__16           child_hold            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 38%  estimated time: 0:00:58
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_185_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_busy            2%
+14099  ntuple_converted__14           child_busy            2%
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_busy            0%
+0      ntuple_converted__17           child_hold            0%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 38%  estimated time: 0:00:57
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_186_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_187_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_busy            2%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_busy            2%
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_busy            2%
+14183  ntuple_converted__17           child_busy            2%
+0      ntuple_converted__18           child_hold            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 42%  estimated time: 0:00:56
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_189_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_busy          100% - 00:00
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_busy            2%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_busy            0%
+0      ntuple_converted__19           child_hold            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 48%  estimated time: 0:00:45
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_busy            2%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_busy            2%
+14194  ntuple_converted__19           child_busy            0%
+0      ntuple_converted__20           child_hold            0%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 48%  estimated time: 0:00:45
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_18_n50.root
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_190_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_busy            2%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_busy            2%
+14194  ntuple_converted__19           child_busy            2%
+14199  ntuple_converted__20           child_busy            2%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 48%  estimated time: 0:00:50
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_busy            2%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_busy            2%
+14194  ntuple_converted__19           child_busy            2%
+14199  ntuple_converted__20           child_busy            2%
+0      ntuple_converted__21           child_hold            0%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 51%  estimated time: 0:00:47
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_191_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_busy          100% - 00:00
+14194  ntuple_converted__19           child_busy            2%
+14199  ntuple_converted__20           child_busy            2%
+14286  ntuple_converted__21           child_busy            2%
+0      ntuple_converted__22           child_hold            0%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 58%  estimated time: 0:00:37
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_192_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_busy            2%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_busy            2%
+14199  ntuple_converted__20           child_busy            2%
+14286  ntuple_converted__21           child_busy            2%
+14301  ntuple_converted__22           child_busy            2%
+0      ntuple_converted__23           child_hold            0%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 58%  estimated time: 0:00:37
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_193_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_busy            2%
+14199  ntuple_converted__20           child_busy          100% - 00:00
+14286  ntuple_converted__21           child_busy            2%
+14301  ntuple_converted__22           child_busy            2%
+14303  ntuple_converted__23           child_busy            2%
+0      ntuple_converted__24           child_hold            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 64%  estimated time: 0:00:29
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_194_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_busy          100% - 00:00
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_busy            2%
+14301  ntuple_converted__22           child_busy            2%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_busy            0%
+0      ntuple_converted__25           child_hold            0%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 67%  estimated time: 0:00:25
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_195_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_busy            2%
+14301  ntuple_converted__22           child_busy            2%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_busy            2%
+14306  ntuple_converted__25           child_busy            2%
+0      ntuple_converted__26           child_hold            0%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 68%  estimated time: 0:00:25
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_196_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_busy            2%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_busy            2%
+14306  ntuple_converted__25           child_busy            2%
+14308  ntuple_converted__26           child_busy            2%
+0      ntuple_converted__27           child_hold            0%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 71%  estimated time: 0:00:24
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_197_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_busy            2%
+14306  ntuple_converted__25           child_busy            2%
+14308  ntuple_converted__26           child_busy            2%
+14333  ntuple_converted__27           child_busy            2%
+0      ntuple_converted__28           child_hold            0%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 74%  estimated time: 0:00:20
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_198_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_busy            2%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_busy            2%
+14333  ntuple_converted__27           child_busy            2%
+14336  ntuple_converted__28           child_busy            2%
+0      ntuple_converted__29           child_hold            0%
+0      ntuple_converted__30           child_hold            0%
+total: 77%  estimated time: 0:00:17
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_199_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_busy            2%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_busy            2%
+14333  ntuple_converted__27           child_busy            2%
+14336  ntuple_converted__28           child_busy            2%
+14337  ntuple_converted__29           child_busy            2%
+0      ntuple_converted__30           child_hold            0%
+total: 80%  estimated time: 0:00:14
+next update in 5 seconds or when child exits
+
+
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
++++ reading input file /ntup_19_n50.root
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_success       100%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_busy            2%
+14333  ntuple_converted__27           child_busy            2%
+14336  ntuple_converted__28           child_busy            2%
+14337  ntuple_converted__29           child_busy            2%
+14341  ntuple_converted__30           child_busy            2%
+total: 84%  estimated time: 0:00:12
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_success       100%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_success       100%
+14333  ntuple_converted__27           child_busy            2%
+14336  ntuple_converted__28           child_busy            2%
+14337  ntuple_converted__29           child_busy            2%
+14341  ntuple_converted__30           child_busy            2%
+total: 87%  estimated time: 0:00:09
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_success       100%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_success       100%
+14333  ntuple_converted__27           child_busy          100% - 00:00
+14336  ntuple_converted__28           child_success       100%
+14337  ntuple_converted__29           child_busy            2%
+14341  ntuple_converted__30           child_busy            2%
+total: 93%  estimated time: 0:00:04
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_success       100%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_success       100%
+14333  ntuple_converted__27           child_success       100%
+14336  ntuple_converted__28           child_success       100%
+14337  ntuple_converted__29           child_busy            2%
+14341  ntuple_converted__30           child_busy            2%
+total: 93%  estimated time: 0:00:04
+next update in 5 seconds or when child exits
+
+
+PID    Sample                         statuscode          progress 
+13945  ntuple_converted__0            child_success       100%
+13946  ntuple_converted__1            child_success       100%
+13947  ntuple_converted__2            child_success       100%
+13948  ntuple_converted__3            child_success       100%
+13949  ntuple_converted__4            child_success       100%
+13950  ntuple_converted__5            child_success       100%
+14008  ntuple_converted__6            child_success       100%
+14009  ntuple_converted__7            child_success       100%
+14011  ntuple_converted__8            child_success       100%
+14012  ntuple_converted__9            child_success       100%
+14013  ntuple_converted__10           child_success       100%
+14026  ntuple_converted__11           child_success       100%
+14094  ntuple_converted__12           child_success       100%
+14096  ntuple_converted__13           child_success       100%
+14099  ntuple_converted__14           child_success       100%
+14155  ntuple_converted__15           child_success       100%
+14173  ntuple_converted__16           child_success       100%
+14183  ntuple_converted__17           child_success       100%
+14191  ntuple_converted__18           child_success       100%
+14194  ntuple_converted__19           child_success       100%
+14199  ntuple_converted__20           child_success       100%
+14286  ntuple_converted__21           child_success       100%
+14301  ntuple_converted__22           child_success       100%
+14303  ntuple_converted__23           child_success       100%
+14304  ntuple_converted__24           child_success       100%
+14306  ntuple_converted__25           child_success       100%
+14308  ntuple_converted__26           child_success       100%
+14333  ntuple_converted__27           child_success       100%
+14336  ntuple_converted__28           child_success       100%
+14337  ntuple_converted__29           child_success       100%
+14341  ntuple_converted__30           child_busy            2%
+total: 96%  estimated time: 0:00:02
+next update in 5 seconds or when child exits
+
+
+basicAnalyzer::writeConfigFooter: configuration file for skim written to:
+/eos/cms/store/cmst3/group/hgcal/CMG_studies/kiwoznia/hgcalsim/NtupTask/dev_CloseByParticleGun_DeltaR0p1_prod7_converted/skimmed_config.txt
+End report:
+Sample                         statuscode           progress 
+ntuple_converted__0            child_success        100%
+ntuple_converted__1            child_success        100%
+ntuple_converted__2            child_success        100%
+ntuple_converted__3            child_success        100%
+ntuple_converted__4            child_success        100%
+ntuple_converted__5            child_success        100%
+ntuple_converted__6            child_success        100%
+ntuple_converted__7            child_success        100%
+ntuple_converted__8            child_success        100%
+ntuple_converted__9            child_success        100%
+ntuple_converted__10           child_success        100%
+ntuple_converted__11           child_success        100%
+ntuple_converted__12           child_success        100%
+ntuple_converted__13           child_success        100%
+ntuple_converted__14           child_success        100%
+ntuple_converted__15           child_success        100%
+ntuple_converted__16           child_success        100%
+ntuple_converted__17           child_success        100%
+ntuple_converted__18           child_success        100%
+ntuple_converted__19           child_success        100%
+ntuple_converted__20           child_success        100%
+ntuple_converted__21           child_success        100%
+ntuple_converted__22           child_success        100%
+ntuple_converted__23           child_success        100%
+ntuple_converted__24           child_success        100%
+ntuple_converted__25           child_success        100%
+ntuple_converted__26           child_success        100%
+ntuple_converted__27           child_success        100%
+ntuple_converted__28           child_success        100%
+ntuple_converted__29           child_success        100%
+ntuple_converted__30           child_success        100%
+
