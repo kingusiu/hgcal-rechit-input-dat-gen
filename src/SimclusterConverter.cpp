@@ -10,8 +10,6 @@ using std::size_t;
 SimclusterConverter::SimclusterConverter( std::vector<float> * eta, std::vector<float> * phi, std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, bool sorted ):
                                             _eta( *eta ), _phi( *phi ), _hits_indices( *hits_idx ), _frac( *frac ) { 
 
-                                                //_simclusStats = SimclusterStats(*std::min_element(_eta.begin(),_eta.end()),*std::max_element(_eta.begin(),_eta.end()));
-
                                                 if(sorted){
                                                     sortVecAByVecB( _hits_indices, _eta );
                                                     sortVecAByVecB( _frac, _eta );
