@@ -7,13 +7,20 @@
 
 class WindowEtaPhi {
 
-        static std::pair<float,float> getMinMaxOfIndexSubset( std::vector<int> * indices, std::vector<float> * values );
+        std::pair<float,float> _eta_window;
+        std::pair<float,float> _phi_window;
 
-        static bool hitIsInWindow( float eta, float phi, std::pair<float,float> eta_window, std::pair<float,float> phi_window );
+        std::pair<float,float> getMinMaxOfIndexSubset( std::vector<int> * indices, std::vector<float> * values, bool isPhi );
+
+        bool hitIsInWindow( float eta, float phi );
+
+        float deltaPhi( float a, float b );
 
     public :
 
-        static std::vector<int> getHitIndicesInEtaPhiWindow( std::vector<int> * hit_indices_of_clusters, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi, double eta_phi_padding );
+        WindowEtaPhi( std::vector<int> * hit_indices_of_clusters, double eta_phi_margin, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi );
+
+        std::vector<int> getHitIndicesInEtaPhiWindow( std::vector<int> * hit_indices_of_clusters, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi );
 
 
 };

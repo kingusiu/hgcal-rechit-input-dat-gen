@@ -81,9 +81,10 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
 
 		// get hits in window
-		double window_margin = 0.05;
 		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
-		std::vector<int> hit_indices_in_eta_phi_window = WindowEtaPhi::getHitIndicesInEtaPhiWindow( &hit_idx_in_simclusters, rechitConv.eta(), rechitConv.phi(), window_margin ); 
+		double window_margin = 0.05;
+		WindowEtaPhi winEtaPhi( &hit_idx_in_simclusters, window_margin, rechitConv.eta(), rechitConv.phi() );
+		std::vector<int> hit_indices_in_eta_phi_window = winEtaPhi.getHitIndicesInEtaPhiWindow( &hit_idx_in_simclusters, rechitConv.eta(), rechitConv.phi() ); 
 
 		for( int hit_idx : hit_indices_in_eta_phi_window ){ // for each rechit (get number of rechits from energy feature)
 
