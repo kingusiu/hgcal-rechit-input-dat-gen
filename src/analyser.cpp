@@ -33,6 +33,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 d_ana::tBranchHandler<std::vector<float> > rechit_y(tree(),"rechit_y");
 	 d_ana::tBranchHandler<std::vector<float> > rechit_z(tree(),"rechit_z");
 	 d_ana::tBranchHandler<std::vector<int> > rechit_detid(tree(),"rechit_detid");
+	 d_ana::tBranchHandler<std::vector<float>> rechit_time( tree(), "rechit_time");
 	 // simcluster data
 	 d_ana::tBranchHandler<std::vector <std::vector<int>> > in_simcluster_hits_idx(tree(), "simcluster_hits_indices");
 	 d_ana::tBranchHandler<std::vector <std::vector<float>> > in_simcluster_frac(tree(), "simcluster_fractions");
@@ -78,7 +79,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		tree()->setEntry(eventno); // all data (energy, eta, ...) of all registered in vectors for the event read in here
 
 		// read in rechit features
-		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content() );
+		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content(), rechit_time.content() );
 
 		// read in simcluster features and sort by eta
 		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
