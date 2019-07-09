@@ -2,6 +2,7 @@
 
 Outputdir  = {output_dir}
 Samplesdir = {input_dir}
+Outputfile = {hist_output_file}
 
 Lumi = 3000
 Testmode = false
@@ -13,6 +14,6 @@ RunOnOutputOnly = false
 
 [inputfiles-begin]
 
-{input_file}, {output_prefix}, 420, 56, auto, 2
+{input_file}, {skim_output_prefix}, 420, 56, auto, 2
 
 [inputfiles-end]
