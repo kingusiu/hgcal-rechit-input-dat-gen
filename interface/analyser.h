@@ -22,6 +22,18 @@ public:
 
 
 private:
+
+	// rechit outputs
+	std::vector< std::vector<float> > _out_rechit;
+	std::vector<std::vector<int>> _out_rechit_simcluster_indices; // save simcluster id as index appearing in simcluster_* arrays of root file
+	std::vector<std::vector<float>> _out_rechit_simcluster_frac;
+	// simcluster stats output
+	std::vector<float> _out_simcluster_stats;
+
+	void registerOutputVectors( TTree * tree );
+
+	void clearOutputVectors( );
+
 	void analyze(size_t id);
 
 	void postProcess();
