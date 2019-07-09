@@ -26,5 +26,5 @@ int main(int argc, char* argv[]){
 
 	analyser.start();
 
-	return 1;
+	return 0;
 }
