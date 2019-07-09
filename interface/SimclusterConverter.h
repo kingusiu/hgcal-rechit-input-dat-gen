@@ -1,3 +1,10 @@
+/*
+ * SimclusterConverter.h
+ *
+ *  Created on: 02 July 2019
+ *      Author: Kinga Anna Wozniak
+ */
+
 
 #ifndef simclusterconverter_H_
 #define simclusterconverter_H_
@@ -36,6 +43,8 @@ class SimclusterConverter {
     std::pair<std::vector<int>, std::vector<float>> getClusterIdxAndFracForHit( int hit_idx );
 
     std::vector<int> getHitIndicesBelongingToClusters( );
+
+    std::vector<float> getStatsForSimclusters( );
 
 };
 

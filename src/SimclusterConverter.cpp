@@ -74,3 +74,14 @@ std::vector<int> SimclusterConverter::getHitIndicesBelongingToClusters( ){
     return std::vector<int>{ unique.begin(), unique.end() }; // return unique hit indices
 }
 
+std::vector<float> SimclusterConverter::getStatsForSimclusters( ){
+    
+    float eta_min = *std::min_element( _eta.begin(), _eta.end() );
+    float eta_max = *std::max_element( _eta.begin(), _eta.end() );
+    float eta_avg = std::accumulate( _eta.begin(), _eta.end(), 0.0 ) / _eta.size();
+    float phi_min = *std::min_element( _phi.begin(), _phi.end() );
+    float phi_max = *std::max_element( _phi.begin(), _phi.end() );
+    float phi_avg = std::accumulate( _phi.begin(), _phi.end(), 0.0 ) / _phi.size();
+    
+    return std::vector<float>{ eta_min, eta_max, eta_avg, phi_min, phi_max, phi_avg };
+}

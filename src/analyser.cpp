@@ -53,10 +53,12 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	std::vector< std::vector<float> > out_rechit;
 	myskim->Branch("rechit_features", &out_rechit);
 	// simcluster attribute output
-	std::vector<std::vector<int>> out_simcluster_indices; // save simcluster id as index appearing in simcluster_* arrays of root file
-	myskim->Branch("simcluster_indices", &out_simcluster_indices);
-	std::vector<std::vector<float>> out_simcluster_frac;
-	myskim->Branch("simcluster_fractions", &out_simcluster_frac);
+	std::vector<std::vector<int>> out_rechit_simcluster_indices; // save simcluster id as index appearing in simcluster_* arrays of root file
+	myskim->Branch("rechit_simcluster_indices", &out_rechit_simcluster_indices);
+	std::vector<std::vector<float>> out_rechit_simcluster_frac;
+	myskim->Branch("rechit_simcluster_fractions", &out_rechit_simcluster_frac);
+	std::vector<float> out_simcluster_stats;
+	myskim->Branch("simcluster_statistics", &out_simcluster_stats);
 
 	size_t nevents=tree()->entries();
 	//if(isTestMode()) nevents/=100;
@@ -64,8 +66,9 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	for(size_t eventno=0;eventno<nevents;eventno++){
 
 		out_rechit.clear();
-		out_simcluster_indices.clear();
-		out_simcluster_frac.clear();
+		out_rechit_simcluster_indices.clear();
+		out_rechit_simcluster_frac.clear();
+		out_simcluster_stats.clear();
 
 		/*
 		 * The following two lines report the status and set the event link
@@ -95,10 +98,12 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 			// get simcluster indices and their respective fractions for rechit "hit_idx"
 			std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( hit_idx ); 
 
-			out_simcluster_indices.push_back( simcluster_indices_and_fractions.first );
-			out_simcluster_frac.push_back( simcluster_indices_and_fractions.second );
+			out_rechit_simcluster_indices.push_back( simcluster_indices_and_fractions.first );
+			out_rechit_simcluster_frac.push_back( simcluster_indices_and_fractions.second );
 
 		}
+
+		out_simcluster_stats = simclusConv.getStatsForSimclusters();
 
 		myskim->Fill();
 

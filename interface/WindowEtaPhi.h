@@ -1,3 +1,10 @@
+/*
+ * WindowEtaPhi.h
+ *
+ *  Created on: 05 July 2019
+ *      Author: Kinga Anna Wozniak
+ */
+
 
 #ifndef windowetaphi_H_
 #define windowetaphi_H_

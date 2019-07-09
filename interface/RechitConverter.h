@@ -2,7 +2,7 @@
  * RechitConverter
  *
  *  Created on: 01 July 2019
- *      Author: kiwoznia
+ *      Author: Kinga Anna Wozniak
  */
 
 
