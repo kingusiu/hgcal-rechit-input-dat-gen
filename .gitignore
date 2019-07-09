@@ -1,5 +1,5 @@
 /output/
-/obj/
+/obj/*.o
 /data/
 /config/*
 !/config/config.txt
