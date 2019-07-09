@@ -1,0 +1,18 @@
+[config-begin]
+
+Outputdir  = {output_dir}
+Samplesdir = {input_dir}
+
+Lumi = 3000
+Testmode = false
+Maxchilds = 1
+RunOnOutputOnly = false
+
+[config-end]
+
+
+[inputfiles-begin]
+
+{input_file}, {output_prefix}, 420, 56, auto, 2
+
+[inputfiles-end]
