@@ -13,6 +13,7 @@
 #include "interface/SimclusterConverter.h"
 #include "interface/WindowEtaPhi.h"
 
+#include "interface/LayerClusterConverter.h"
 
 void analyser::registerOutputVectors( TTree * tree ){
 
@@ -20,6 +21,10 @@ void analyser::registerOutputVectors( TTree * tree ){
 	tree->Branch("rechit_simcluster_indices", &_out_rechit_simcluster_indices);
 	tree->Branch("rechit_simcluster_fractions", &_out_rechit_simcluster_frac);
 	tree->Branch("simcluster_statistics", &_out_simcluster_stats);
+
+	//layer clusters
+    tree->Branch("layercluster_features",&_out_layercluster);
+    tree->Branch("layercluster_simcluster_fractions",&_out_layercluster_frac);
 }
 
 
@@ -29,6 +34,10 @@ void analyser::clearOutputVectors( ){
 	_out_rechit_simcluster_indices.clear();
 	_out_rechit_simcluster_frac.clear();
 	_out_simcluster_stats.clear();
+
+	//layer clusters
+	_out_layercluster.clear();
+	_out_layercluster_frac.clear();
 }
 
 
@@ -58,7 +67,15 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_eta( tree(),"simcluster_eta");
 	 d_ana::tBranchHandler<std::vector<float> > in_simcluster_phi( tree(),"simcluster_phi");
 
-
+	 //layer cluster properties
+	 d_ana::tBranchHandler<std::vector<float> > lc_energy( tree(),"cluster2d_energy");
+     d_ana::tBranchHandler<std::vector<float> > lc_x( tree(),"cluster2d_x");
+     d_ana::tBranchHandler<std::vector<float> > lc_y( tree(),"cluster2d_y");
+     d_ana::tBranchHandler<std::vector<float> > lc_z( tree(),"cluster2d_z");
+     d_ana::tBranchHandler<std::vector<float> > lc_eta( tree(),"cluster2d_eta");
+     d_ana::tBranchHandler<std::vector<float> > lc_phi( tree(),"cluster2d_phi");
+     d_ana::tBranchHandler<std::vector<std::vector<int> > > lc_rechits( tree(),"cluster2d_rechits");
+	 //end layer cluster properties
 	/*
 	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
 	 * the tree. The output files will be written automatically, and a config file will be created.
@@ -102,6 +119,31 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		}
 
 		_out_simcluster_stats = simclusConv.getStatsForSimclusters();
+
+		//layer cluster loop
+
+		LayerClusterConverter lc_converter;
+		lc_converter.setLayerClusters(lc_energy.content(),lc_x.content(),lc_y.content(),
+	            lc_z.content(),lc_eta.content(),lc_phi.content(),lc_rechits.content() );
+		lc_converter.setRechits(rechit_energy.content(),rechit_x.content(),rechit_y.content(),
+		        rechit_z.content(),rechit_time.content(),rechit_detid.content() );
+		lc_converter.setSimClusterConverter(&simclusConv);
+
+
+
+		for( int lc_idx=0; lc_idx< (int)lc_energy.content()->size(); lc_idx++){
+
+		    if(! winEtaPhi.hitIsInWindow(lc_eta.content()->at(lc_idx),lc_phi.content()->at(lc_idx)) )
+		        continue;
+
+		    std::vector<float> lc_features = lc_converter.createLayerClusterFeatures( lc_idx );
+            std::vector<float> lc_truth    = lc_converter.createLayerClusterTruth( lc_idx );
+
+            _out_layercluster.push_back(lc_features);
+            _out_layercluster_frac.push_back(lc_truth);
+		}
+
+		//end layer cluster loop
 
 		myskim->Fill();
 

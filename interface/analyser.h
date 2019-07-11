@@ -30,6 +30,11 @@ private:
 	// simcluster stats output
 	std::vector<float> _out_simcluster_stats;
 
+	//layer cluster output
+	std::vector< std::vector<float> > _out_layercluster;
+    std::vector< std::vector<float> > _out_layercluster_frac;
+
+
 	void registerOutputVectors( TTree * tree );
 
 	void clearOutputVectors( );
