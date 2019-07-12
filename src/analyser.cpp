@@ -107,12 +107,17 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 		for( int hit_idx : hit_indices_in_eta_phi_window ){ // for each rechit (get number of rechits from energy feature)
 
+		    // we make a lower energy cut to avoid too much noise. [energy in GeV]
+		    if(rechit_energy.content()->at(hit_idx) < 0.01)
+		        continue;
+
 			// put together all features for rechit "hit_idx"
 			std::vector<float> rechit_features = rechitConv.getFeaturesForHit( hit_idx );
 			_out_rechit.push_back(rechit_features);
 
 			// get simcluster indices and their respective fractions for rechit "hit_idx"
 			std::pair<std::vector<int>, std::vector<float>> simcluster_indices_and_fractions = simclusConv.getClusterIdxAndFracForHit( hit_idx ); 
+
 			_out_rechit_simcluster_indices.push_back( simcluster_indices_and_fractions.first );
 			_out_rechit_simcluster_frac.push_back( simcluster_indices_and_fractions.second );
 
