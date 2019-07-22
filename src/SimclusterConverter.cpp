@@ -1,18 +1,78 @@
 #include "interface/SimclusterConverter.h"
-
+#include "../interface/helpers.h"
 #include <numeric>
 #include <algorithm>
 #include <set>
+#include "Math/Vector3D.h"
+
+#include <iostream>
 
 using std::size_t;
 
 
-SimclusterConverter::SimclusterConverter( std::vector<float> * eta, std::vector<float> * phi, std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, bool sorted ):
-                                            _eta( *eta ), _phi( *phi ), _hits_indices( *hits_idx ), _frac( *frac ) { 
+void SimclusterConverter::calculateEtaPhiR(std::vector<float> * rechit_x, std::vector<float> * rechit_y, std::vector<float> * rechit_z, std::vector<float> * rechit_energy){
+    if(_frac.size()<1) return; //no simcluster
 
+    std::vector<double> avg_x(_frac.size(),0);
+    std::vector<double> avg_y(_frac.size(),0);
+    std::vector<double> avg_z(_frac.size(),0);
+    std::vector<double> energy(_frac.size(),0);
+
+    _eta.clear();
+    _phi.clear();
+    _Rho.clear();
+    _energy.clear();
+
+    for(size_t rh_idx=0;rh_idx<rechit_x->size();rh_idx++){
+
+        const float& rh_x = rechit_x->at(rh_idx);
+        const float& rh_y = rechit_y->at(rh_idx);
+        const float& rh_z = rechit_z->at(rh_idx);
+        const float& rh_energy = rechit_energy->at(rh_idx);
+
+
+        for(size_t sc_idx=0;sc_idx<_frac.size();sc_idx++){
+            auto found = std::find( _hits_indices.at(sc_idx).begin(), _hits_indices.at(sc_idx).end(), (int)rh_idx );
+            if(found  ==  _hits_indices.at(sc_idx).end())continue;
+
+            int frac_idx = found - _hits_indices.at(sc_idx).begin();
+
+            double weighted_energy = _frac.at(sc_idx).at(frac_idx) * rh_energy;
+
+            avg_x.at(sc_idx)   += weighted_energy * rh_x;
+            avg_y.at(sc_idx)   += weighted_energy * rh_y;
+            avg_z.at(sc_idx)   += weighted_energy * rh_z;
+            energy.at(sc_idx)  += weighted_energy;
+        }
+    }
+    for(size_t sc_idx=0;sc_idx<_frac.size();sc_idx++){
+
+        avg_x.at(sc_idx) /= energy.at(sc_idx);
+        avg_y.at(sc_idx) /= energy.at(sc_idx);
+        avg_z.at(sc_idx) /= energy.at(sc_idx);
+
+        ROOT::Math::DisplacementVector3D<ROOT::Math::CylindricalEta3D<double> > RhoEtaPhiVector;
+        RhoEtaPhiVector.SetXYZ(avg_x.at(sc_idx), avg_y.at(sc_idx),avg_z.at(sc_idx));
+
+        _eta.push_back(RhoEtaPhiVector.Eta());
+        _phi.push_back(RhoEtaPhiVector.Phi());
+        _Rho.push_back(RhoEtaPhiVector.Rho());
+        _energy.push_back(energy.at(sc_idx));
+    }
+
+
+}
+
+
+SimclusterConverter::SimclusterConverter( std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi, std::vector<float> * rechit_z, std::vector<float> * rechit_energy, bool sorted ):
+                                            _eta( {} ), _phi( {} ), _hits_indices( *hits_idx ), _frac( *frac ) {
+    calculateEtaPhiR(rechit_eta,rechit_phi,rechit_z,rechit_energy);
                                                 if(sorted){
                                                     sortVecAByVecB( _hits_indices, _eta );
                                                     sortVecAByVecB( _frac, _eta );
+                                                    sortVecAByVecB( _phi, _eta );
+                                                    sortVecAByVecB( _Rho, _eta );
+                                                    sortVecAByVecB( _eta, _eta );
                                                 }
                                             }
 
@@ -85,3 +145,16 @@ std::vector<float> SimclusterConverter::getStatsForSimclusters( ){
     
     return std::vector<float>{ eta_min, eta_max, eta_avg, phi_min, phi_max, phi_avg };
 }
+
+std::vector<std::vector<float> > SimclusterConverter::getFeaturesForSimclusters( ){
+
+    std::vector<std::vector<float> > out;
+
+    for(size_t i=0;i<_energy.size();i++){
+        std::vector<float> features = {_energy.at(i), _eta.at(i), _phi.at(i), _Rho.at(i)};
+        out.push_back(features);
+    }
+    return out;
+}
+
+

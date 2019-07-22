@@ -21,6 +21,7 @@ void analyser::registerOutputVectors( TTree * tree ){
 	tree->Branch("rechit_simcluster_indices", &_out_rechit_simcluster_indices);
 	tree->Branch("rechit_simcluster_fractions", &_out_rechit_simcluster_frac);
 	tree->Branch("simcluster_statistics", &_out_simcluster_stats);
+    tree->Branch("simcluster_features", &_out_simcluster_features);
 
 	//layer clusters
     tree->Branch("layercluster_features",&_out_layercluster);
@@ -34,6 +35,7 @@ void analyser::clearOutputVectors( ){
 	_out_rechit_simcluster_indices.clear();
 	_out_rechit_simcluster_frac.clear();
 	_out_simcluster_stats.clear();
+	_out_simcluster_features.clear();
 
 	//layer clusters
 	_out_layercluster.clear();
@@ -97,7 +99,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 
 		// read in rechit features and simcluster features sorted by eta
 		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content(), rechit_time.content() );
-		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_eta.content(), in_simcluster_phi.content(), in_simcluster_hits_idx.content(), in_simcluster_frac.content() );
+		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_hits_idx.content(), in_simcluster_frac.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_energy.content() );
 
 		// get hits in window
 		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
@@ -124,6 +126,7 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		}
 
 		_out_simcluster_stats = simclusConv.getStatsForSimclusters();
+		_out_simcluster_features = simclusConv.getFeaturesForSimclusters();
 
 		//layer cluster loop
 

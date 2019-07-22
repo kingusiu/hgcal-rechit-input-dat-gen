@@ -24,8 +24,14 @@ struct SimclusterStats {
 
 class SimclusterConverter {
 
+    void calculateEtaPhiR(std::vector<float> * rechit_eta, std::vector<float> * rechit_phi, std::vector<float> * rechit_z, std::vector<float> * rechit_energy);
+
     std::vector<float> _eta;
     std::vector<float> _phi;
+    std::vector<float> _energy;
+    std::vector<float> _Rho;
+    // for the future std::vector<float> _true_energy;
+    // for the future std::vector<float> _true_id;
     std::vector<std::vector<int>> _hits_indices;
     std::vector<std::vector<float>> _frac;    
 
@@ -33,7 +39,7 @@ class SimclusterConverter {
 
     public:
 
-    SimclusterConverter( std::vector<float> * eta, std::vector<float> * phi, std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, bool sorted = true );
+    SimclusterConverter(  std::vector<std::vector<int>> * hits_idx, std::vector<std::vector<float>> * frac, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi, std::vector<float> * rechit_z, std::vector<float> * rechit_energy, bool sorted = true );
 
     int numSimclusters( ){ return _hits_indices.size(); }
 
@@ -45,6 +51,7 @@ class SimclusterConverter {
     std::vector<int> getHitIndicesBelongingToClusters( );
 
     std::vector<float> getStatsForSimclusters( );
+    std::vector<std::vector<float> > getFeaturesForSimclusters( );
 
 };
 

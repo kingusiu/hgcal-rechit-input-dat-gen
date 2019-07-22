@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include "../interface/helpers.h"
 
 WindowEtaPhi::WindowEtaPhi( std::vector<int> * hit_indices_of_clusters, double eta_phi_margin, std::vector<float> * rechit_eta, std::vector<float> * rechit_phi ){
 
@@ -14,12 +15,7 @@ WindowEtaPhi::WindowEtaPhi( std::vector<int> * hit_indices_of_clusters, double e
 }
 
 float WindowEtaPhi::deltaPhi( float a, float b ){
-
-    const float pi = 3.14159265358979323846;
-    float delta = (a - b);
-    while (delta >= pi)  delta-= 2* pi;
-    while (delta < -pi)  delta+= 2* pi;
-    return delta;
+    return helpers::deltaPhi<float>(a,b);
 }
 
 
@@ -44,7 +40,7 @@ std::vector<int> WindowEtaPhi::getHitIndicesInEtaPhiWindow( std::vector<int> * h
 
     std::vector<int> indices_in_window;
     
-    for(int i = 0; i < rechit_eta->size(); i++ ){
+    for(int i = 0; i < (int)rechit_eta->size(); i++ ){
         if( hitIsInWindow( rechit_eta->at(i), rechit_phi->at(i) ) ) indices_in_window.push_back( i );
     }
 
