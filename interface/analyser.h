@@ -29,6 +29,7 @@ private:
 	std::vector<std::vector<float>> _out_rechit_simcluster_frac;
 	// simcluster stats output
 	std::vector<float> _out_simcluster_stats;
+	std::vector<std::vector<float> > _out_simcluster_features;
 
 	//layer cluster output
 	std::vector< std::vector<float> > _out_layercluster;
