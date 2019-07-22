@@ -14,6 +14,7 @@
 #include "interface/WindowEtaPhi.h"
 
 #include "interface/LayerClusterConverter.h"
+#include "interface/caloParticleMerger.h"
 
 void analyser::registerOutputVectors( TTree * tree ){
 
@@ -78,6 +79,11 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
      d_ana::tBranchHandler<std::vector<float> > lc_phi( tree(),"cluster2d_phi");
      d_ana::tBranchHandler<std::vector<std::vector<int> > > lc_rechits( tree(),"cluster2d_rechits");
 	 //end layer cluster properties
+
+     //calo particle association
+
+     d_ana::tBranchHandler<std::vector<std::vector<int> > > calopart_simcluster_index( tree(),"calopart_simClusterIndex");
+
 	/*
 	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
 	 * the tree. The output files will be written automatically, and a config file will be created.
@@ -97,9 +103,15 @@ void analyser::analyze(size_t childid /* this info can be used for printouts */)
 		reportStatus(eventno,nevents);
 		tree()->setEntry(eventno); // all data (energy, eta, ...) of all registered in vectors for the event read in here
 
+		//make sure to use calo particles as truth, not raw simclusters
+		caloParticleMerger cp_merger(calopart_simcluster_index.content() ,in_simcluster_frac.content() ,in_simcluster_hits_idx.content());
+		std::vector<std::vector<float> > merged_sc_fractions = cp_merger.mergedFractions();
+		std::vector<std::vector<int> >   merged_sc_idx       = cp_merger.mergedHitIdx();
+
+
 		// read in rechit features and simcluster features sorted by eta
 		RechitConverter rechitConv = RechitConverter( rechit_energy.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_detid.content(), rechit_phi.content(), rechit_eta.content(), rechit_time.content() );
-		SimclusterConverter simclusConv = SimclusterConverter( in_simcluster_hits_idx.content(), in_simcluster_frac.content(), rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_energy.content() );
+		SimclusterConverter simclusConv = SimclusterConverter( &merged_sc_idx, &merged_sc_fractions, rechit_x.content(), rechit_y.content(), rechit_z.content(), rechit_energy.content() );
 
 		// get hits in window
 		std::vector<int> hit_idx_in_simclusters = simclusConv.getHitIndicesBelongingToClusters();
